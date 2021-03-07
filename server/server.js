@@ -10,10 +10,10 @@ app.use(parser.json());
 
 MongoClient.connect("mongodb://localhost:27017")
   .then((client) => {
-    const db = client.db("guests"); //TO BE EDITED
-    const bookingsCollection = db.collection("bookings"); //TO BE EDITED
-    const bookingsRouter = createRouter(bookingsCollection);
-    app.use("/api/bookings", bookingsRouter);
+    const db = client.db("jobs");
+    const applicationsCollection = db.collection("applications");
+    const applicationsRouter = createRouter(applicationsCollection);
+    app.use("/api/applications", applicationsRouter);
   })
   .catch(console.err);
 
